@@ -12,8 +12,8 @@
         {% for post in posts %}
             {% if post.archived is not defined or post.archived != true %}
             <tr>
-                <td>{{ post.date.strftime("%b %-d, %Y") }}</td>
-                <td><a href="{{ site.baseurl }}/posts/{{ post.slug }}">{{ post.title }}</a></td>
+                <td nowrap class="article-table-date">{{ post.date.strftime("%b %-d, %Y") }}</td>
+                <td class="article-table-content"><a href="{{ site.baseurl }}/posts/{{ post.slug }}.html">{{ post.title }}</a></td>
             </tr>
             {% endif %}
         {% endfor %}

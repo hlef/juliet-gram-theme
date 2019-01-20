@@ -74,6 +74,17 @@ table {
     border-collapse: collapse;
 }
 
+.article-table-date {
+    padding-right: 15px;
+    /* article links take as much space as possible, dates just as much as
+    needed with small space at right to stay readable */
+    width: auto;
+}
+
+.article-table-content {
+    width: 100%;
+}
+
 .sourcetable {
     width: 100%;
     display: block;
@@ -120,6 +131,10 @@ footer {
 
 footer > .container {
     margin-top: 0;
+}
+
+footer p {
+    text-align: left;
 }
 
 /* navbar */

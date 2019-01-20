@@ -9,7 +9,7 @@
     <div class="navbar-right">
     {% for p in pages %}
         <span class="navbar-item{% if page is defined and p.title|string() == page.title|string() %} navbar-item-active{% endif %}">
-            <a href="{{ site.baseurl }}/{{ p.permalink }}">{% if p.shorttitle is defined %}{{ p.shorttitle }}{% else %}{{ p.title }}{% endif %}</a>
+            <a href="{{ site.baseurl }}/{{ p.permalink }}.html">{% if p.shorttitle is defined %}{{ p.shorttitle }}{% else %}{{ p.title }}{% endif %}</a>
         </span>
     {% endfor %}
     </div>

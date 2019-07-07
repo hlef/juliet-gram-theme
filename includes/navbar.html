@@ -1,15 +1,19 @@
 <nav class="container">
     <div class="navbar-left">
         <span class="navbar-item">
-            <a class="navbar-main" href="{{ site.baseurl }}/index.html">Home</a>
+            <a class="navbar-main" href="{{ site.baseurl }}/index.html">{{ site.index_shorttitle }}</a>
         </span>
     </div>
 
     <!-- Navbar links stacked right-->
     <div class="navbar-right">
     {% for p in pages %}
-        <span class="navbar-item{% if page is defined and p.title|string() == page.title|string() %} navbar-item-active{% endif %}">
+        <span class="navbar-item">
+            {% if page is defined and p.title|string() == page.title|string() %}
+            <p>{{p.shorttitle}}</p>
+            {% else %}
             <a href="{{ site.baseurl }}/{{ p.permalink }}.html">{% if p.shorttitle is defined %}{{ p.shorttitle }}{% else %}{{ p.title }}{% endif %}</a>
+            {% endif %}
         </span>
     {% endfor %}
     </div>

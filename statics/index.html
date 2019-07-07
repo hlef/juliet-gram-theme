@@ -13,7 +13,7 @@
             {% if post.archived is not defined or post.archived != true %}
             <tr>
                 <td nowrap class="article-table-date">{{ post.date.strftime("%b %-d, %Y") }}</td>
-                <td class="article-table-content"><a href="{{ site.baseurl }}/posts/{{ post.slug }}.html">{{ post.title }}</a></td>
+                <td class="article-table-content"><a href="{{ site.baseurl }}/posts/{{ post.installed_filename }}">{{ post.title }}</a></td>
             </tr>
             {% endif %}
         {% endfor %}

@@ -7,14 +7,22 @@
 
     <!-- Navbar links stacked right-->
     <div class="navbar-right">
-    {% for p in pages %}
-        <span class="navbar-item">
-            {% if page is defined and p.title|string() == page.title|string() %}
-            <p>{{p.shorttitle}}</p>
-            {% else %}
-            <a href="{{ site.baseurl }}/{{ p.permalink }}.html">{% if p.shorttitle is defined %}{{ p.shorttitle }}{% else %}{{ p.title }}{% endif %}</a>
-            {% endif %}
-        </span>
+    {% for p in pages|sort(attribute='navbarposition') %}
+        {% if p.addtonavbar %}
+            <span class="navbar-item">
+                {% if page is defined and p.title|string() == page.title|string() %}
+                    <p>{{p.shorttitle}}</p>
+                {% else %}
+                    <a href="{{ site.baseurl }}/{{ p.installed_filename }}">
+                        {% if p.shorttitle is defined %}
+                            {{ p.shorttitle }}
+                        {% else %}
+                            {{ p.title }}
+                        {% endif %}
+                    </a>
+                {% endif %}
+            </span>
+        {% endif %}
     {% endfor %}
     </div>
 </nav>

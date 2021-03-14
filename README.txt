@@ -10,4 +10,4 @@ d"     YD
 
 Content-focused Juliet theme.
 
-juliet version: v0.2
+juliet version: v0.3-alpha

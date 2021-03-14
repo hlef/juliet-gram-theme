@@ -11,7 +11,13 @@
         {% if p.addtonavbar %}
             <span class="navbar-item">
                 {% if page is defined and p.title|string() == page.title|string() %}
-                    <p>{{p.shorttitle}}</p>
+                    <p>
+                        {% if p.shorttitle is defined %}
+                            {{ p.shorttitle }}
+                        {% else %}
+                            {{ p.title }}
+                        {% endif %}
+                    </p>
                 {% else %}
                     <a href="{{ site.baseurl }}/{{ p.installed_filename }}">
                         {% if p.shorttitle is defined %}
